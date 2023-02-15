@@ -2,6 +2,7 @@
     "name": "yemesoft/think-php-web-base",
     "description": "php网站基础模板",
     "type": "project",
+    "version": "0.0.1",
     "keywords": [
         "yemesoft",
         "悦铭软件"
