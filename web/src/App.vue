@@ -1,5 +1,5 @@
 <template>
-  <router-view/>
+  <router-view class="content"/>
 </template>
 
 <script>
@@ -15,15 +15,10 @@ export default {
   margin: 0;
 }
 
-html, body {
+html, body, #app {
   width: 100%;
   height: 100%;
-}
-
-div {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+  overflow: hidden;
 }
 
 #app {
@@ -31,6 +26,13 @@ div {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #333333;
+}
+</style>
+
+<style scoped lang="less">
+.content {
+  width: 100%;
+  height: 100%;
 }
 </style>

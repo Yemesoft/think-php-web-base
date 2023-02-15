@@ -1,19 +1,33 @@
 <template>
-<div class="header">
-  <div class="header">
+  <div class="container">
+    <AppMenus/>
 
+    <div class="main">
+      <router-view/>
+    </div>
   </div>
-
-  <router-view />
-</div>
 </template>
 
 <script>
+import AppMenus from '@/views/admin/components/AppMenus.vue'
+
 export default {
-  name: "Index"
+  name: "Index",
+  components: {
+    AppMenus
+  }
 }
 </script>
 
-<style scoped>
+<style scoped lang="less">
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
 
+  .main {
+    flex: 1;
+  }
+}
 </style>

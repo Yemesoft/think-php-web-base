@@ -44,5 +44,5 @@ function sendResponse($code_or_data = 0, $message = 'success', $data = null)
             $arr['data'] = $code_or_data;
         }
     }
-    die(json_encode($arr, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_FORCE_OBJECT));
+    die(json_encode($arr, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
 }

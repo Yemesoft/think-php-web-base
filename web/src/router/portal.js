@@ -2,7 +2,7 @@ import Portal from '@/views/admin'
 
 export default {
     path: '/',
-    name: 'PortalMain',
+    name: 'Portal',
     redirect: '/home',
     component: Portal,
     children: [

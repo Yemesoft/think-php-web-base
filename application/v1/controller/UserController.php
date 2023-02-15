@@ -9,12 +9,7 @@ class UserController extends BaseController
     function login()
     {
         $users = model('user')->all();
-        $response = array(
-            'code' => 0,
-            'message' => '登录成功',
-            'data' => $users
-        );
-        sendResponse($response);
+        sendResponse($users);
     }
 
     function info()
