@@ -5,6 +5,7 @@
           default-active="2"
           class="el-menu-vertical-demo"
           :collapse="isMenuCollapse"
+          :collapse-transition="false"
           @open="handleOpen"
           @close="handleClose"
       >
