@@ -1,14 +1,10 @@
 <template>
   <div style="display: flex;flex-direction: column">
-    <el-radio-group v-model="isCollapse" style="margin-bottom: 20px">
-      <el-radio-button :label="false">expand</el-radio-button>
-      <el-radio-button :label="true">collapse</el-radio-button>
-    </el-radio-group>
     <div style="overflow: auto;flex: 1">
       <el-menu
           default-active="2"
           class="el-menu-vertical-demo"
-          :collapse="isCollapse"
+          :collapse="isMenuCollapse"
           @open="handleOpen"
           @close="handleClose"
       >
@@ -23,6 +19,16 @@
           </router-link>
         </template>
 
+        <el-submenu>
+          <template #title>
+            <el-icon><location /></el-icon>
+            <span>Navigator One</span>
+          </template>
+          <el-menu-item-group>
+            <el-menu-item index="1-1"><el-icon><location /></el-icon>item one</el-menu-item>
+            <el-menu-item index="1-2"><el-icon><location /></el-icon>item two</el-menu-item>
+          </el-menu-item-group>
+        </el-submenu>
         <el-menu-item index="1" class="menu-item">
           <el-icon>
             <Menu/>
@@ -331,15 +337,19 @@
 <script>
 
 import admin from '@/router/admin'
+import {mapGetters, mapState} from "vuex";
 
 export default {
   name: "AppMenus",
   data() {
     return {
-      isCollapse: false
     }
   },
   computed: {
+    // ...mapState(['isMenuCollapse']),
+    isMenuCollapse(){
+      return this.$store.state.isMenuCollapse
+    },
     menuItems() {
       return admin.children
     }
