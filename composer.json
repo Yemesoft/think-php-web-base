@@ -1,18 +1,17 @@
 {
-    "name": "topthink/think",
-    "description": "the new thinkphp framework",
+    "name": "yemesoft/think-php-web-base",
+    "description": "php网站基础模板",
     "type": "project",
     "keywords": [
-        "framework",
-        "thinkphp",
-        "ORM"
+        "yemesoft",
+        "悦铭软件"
     ],
-    "homepage": "http://thinkphp.cn/",
+    "homepage": "https://www.yemesoft.com/",
     "license": "Apache-2.0",
     "authors": [
         {
-            "name": "liu21st",
-            "email": "liu21st@gmail.com"
+            "name": "MartinDKent",
+            "email": "365168907@qq.com"
         }
     ],
     "require": {
