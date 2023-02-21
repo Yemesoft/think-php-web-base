@@ -157,10 +157,11 @@ const routes: RouteRecordRaw[] = [
     },
 ];
 
+// @ts-ignore
 const router = createRouter({
-    mode: 'history',
-    base: '/portal/',
-    history: createWebHashHistory(),
+    // mode: 'history',
+    // base: '/portal/',
+    history: createWebHashHistory('/portal/'),
     routes,
 });
 
