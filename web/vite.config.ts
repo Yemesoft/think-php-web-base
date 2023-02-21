@@ -45,11 +45,11 @@ export default defineConfig(({command, mode}) => {
             port: 8081, // 访问端口
             proxy: {
                 [VITE_APP_API]: {
-                    target: VITE_API_DEV_TARGET + VITE_APP_API,
+                    target: VITE_API_DEV_TARGET,
                     changeOrigin: true,
                     // rewrite: (path) => {
                     //     console.log('try rewrite:' + path)
-                    //     return path.replace(/^\/api/, '')
+                    //     return path
                     // }
                 }
             },
