@@ -1,38 +1,14 @@
 <template>
-  <router-view class="content"/>
+    <el-config-provider :locale="zhCn">
+        <router-view />
+    </el-config-provider>
 </template>
 
-<script>
-export default {
-  name: 'App',
-  components: {}
-}
+<script setup lang="ts">
+import { ElConfigProvider } from 'element-plus';
+import zhCn from 'element-plus/es/locale/lang/zh-cn';
 </script>
-
 <style>
-* {
-  padding: 0;
-  margin: 0;
-}
-
-html, body, #app {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #333333;
-}
-</style>
-
-<style scoped lang="less">
-.content {
-  width: 100%;
-  height: 100%;
-}
+@import './assets/css/main.css';
+@import './assets/css/color-dark.css';
 </style>
