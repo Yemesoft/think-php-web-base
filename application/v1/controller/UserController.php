@@ -8,8 +8,18 @@ class UserController extends BaseController
 {
     function login()
     {
-        $users = model('user')->all();
-        sendResponse($users);
+        try{
+            $username = request('username');
+            $password = request('password');
+            if (empty($username) || empty($password)) {
+                sendResponse(-1, "用户名或密码不能为空");
+            }
+            $users = model('user')->all();
+            sendResponse($users);
+        } catch (Exception $e){
+            var_dump($e);
+            die();
+        }
     }
 
     function info()

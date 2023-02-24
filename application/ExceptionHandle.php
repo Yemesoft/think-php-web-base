@@ -9,7 +9,7 @@ class ExceptionHandle extends Handle
 {
     public function render(Exception $e)
     {
-        sendResponse(500, 'Server Error');
+        sendResponse(500, 'Server Error:'.$e->getMessage());
     }
 
 }

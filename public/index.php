@@ -9,8 +9,12 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
+
 // [ 应用入口文件 ]
 namespace think;
+
+define('APP_PATH', realpath(__DIR__ . '/../application/') . '/', true);
+define('CONFIG_PATH', realpath(__DIR__ . '/../config/') . '/', true);
 
 //$params = file_get_contents('php://input');//file_get_contents('php://input');
 //$response = array(
