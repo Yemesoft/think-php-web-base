@@ -25,7 +25,7 @@
         <div class="login-btn">
           <el-button type="primary" @click="submitForm(login)">登录</el-button>
         </div>
-        <p class="login-tips">Tips : 用户名和密码随便填。</p>
+        <p class="login-tips">Tips：如遇问题请联系管理员。微信：yemesoft</p>
       </el-form>
     </div>
   </div>
@@ -68,7 +68,7 @@ const submitForm = (formEl: FormInstance | undefined) => {
   if (!formEl) return;
   formEl.validate((valid: boolean) => {
     if (valid) {
-      useUserStore().login({}).then(response => {
+      useUserStore().login(param).then(response => {
         ElMessage.success('登录成功');
         localStorage.setItem('ms_username', param.username);
         const keys = permiss.defaultList[param.username == 'admin' ? 'admin' : 'user'];

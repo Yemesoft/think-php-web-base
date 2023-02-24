@@ -27,7 +27,7 @@ export const useUserStore = defineStore('user', {
                 login(data).then(response => {
                     resolve(response)
                 }).catch(e => {
-                    reject(reject)
+                    reject(e)
                 })
             })
         }
