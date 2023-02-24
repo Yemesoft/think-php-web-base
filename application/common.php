@@ -9,16 +9,29 @@
 // | Author: 流年 <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-// 应用公共文件
-$request_params = file_get_contents('php://input');
-if (empty($request_params)) {
-    $request_params = '{}';
+function get($arr, $combined_key, $default = null)
+{
+    $keys = explode('.', $combined_key);
+    $data = $arr;
+    for ($i = 0; $i < count($keys); $i++) {
+        $key = $keys[$i];
+        if (isset($data[$key])) {
+            $data = $data[$key];
+        } else {
+            return $default;
+        }
+    }
+    return $data;
 }
-$GLOBALS['request_params'] = json_decode($request_params, true);
-function all_params()
+
+// 应用公共文件
+function get_params($combined_key, $default = null)
 {
     global $GLOBALS;
-    return $GLOBALS['request_params'];
+    if (!isset($GLOBALS['current_request_params'])) {
+        $GLOBALS['current_request_params'] = json_decode(request()->getInput(), true);
+    }
+    return get($GLOBALS['current_request_params'], $combined_key, $default);
 }
 
 /**
