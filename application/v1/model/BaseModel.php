@@ -7,7 +7,7 @@ use think\Model;
 
 abstract class BaseModel extends Model
 {
-    const MD5_FIELD_NAME = 'SERIAL';
+    const MD5_FIELD_NAME = 'MODEL_SERIAL_MD5';
 
     private $current_fields_md5 = false;
 
@@ -43,9 +43,6 @@ abstract class BaseModel extends Model
         }
     }
 
-    /**
-     * @throws ReflectionException
-     */
     private function updateModel()
     {
         $class_name = get_class($this);

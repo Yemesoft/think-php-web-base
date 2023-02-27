@@ -5,7 +5,7 @@ namespace app\v1\model;
 class UserModel extends BaseModel
 {
     //field_names_md5_start
-    const SERIAL = "55f1f8350a4efc9e2127b6b97cdb0e38";
+    const MODEL_SERIAL_MD5 = "55f1f8350a4efc9e2127b6b97cdb0e38";
     //field_names_md5_end
 
     //field_names_start
